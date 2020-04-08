@@ -1,0 +1,47 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "page",
+    "pageSize",
+    "totalPageCount",
+    "wkda"
+  ],
+  "properties": {
+    "page": {
+      "$id": "#/properties/page",
+      "type": "integer",
+      "title": "The Page Schema",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    },
+    "pageSize": {
+      "$id": "#/properties/pageSize",
+      "type": "integer",
+      "title": "The Pagesize Schema",
+      "default": 0,
+      "examples": [
+        2147483647
+      ]
+    },
+    "totalPageCount": {
+      "$id": "#/properties/totalPageCount",
+      "type": "integer",
+      "title": "The Totalpagecount Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "wkda": {
+      "$id": "#/properties/wkda",
+      "type": "object",
+      "title": "The Wkda Schema"
+    }
+  }
+}

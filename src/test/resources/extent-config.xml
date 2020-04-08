@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <!-- standard, dark -->
+        <theme>dark</theme>
+
+        <!-- document encoding -->
+        <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+
+        <!-- protocol for script and stylesheets -->
+        <!-- defaults to https -->
+        <protocol>http</protocol>
+
+        <!-- title of the document -->
+        <!-- title of the document -->
+        <documentTitle>Test Report</documentTitle>
+
+        <!--<reportName>Automation Test Result</reportName>-->
+        <!-- location of charts in the test view -->
+
+        <!-- report name - displayed at top-nav -->
+        <reportName>
+            <![CDATA[
+            <head>
+                <link href='MaterialIcons.css' rel='stylesheet' />
+	            <link href='extent.css' type='text/css' rel='stylesheet' />
+	            <script src='extent.js' type='text/javascript'></script>
+	        </head>
+               <span style="margin-left: -90px; font-weight: bold; text-decoration: overline;"> Automation Test Result </span>
+               <a href="#">
+                <img style="float: left;height: 90%;margin-left: 16px; margin-right: 16px; margin-top: 2px; width: auto;" src="org_logo.png" width="111" height="35" alt="auto1_logo">
+               </a>
+            ]]>
+        </reportName>
+
+        <!-- location of charts in the test view -->
+        <!-- top, bottom -->
+        <testViewChartLocation>bottom</testViewChartLocation>
+
+        <!-- custom javascript -->
+        <scripts>
+
+            <![CDATA[
+
+            var coll =  document.getElementsByClassName("collapsible"); var i; for (i = 0; i < coll.length; i++) { coll[i].addEventListener("click", function() { this.classList.toggle("active"); var content = this.nextElementSibling; if (content.style.maxHeight){ content.style.maxHeight = null; } else { content.style.maxHeight = content.scrollHeight + "px"; } }); }
+<!--                $(document).ready(function() {-->
+
+<!--                });-->
+            ]]>
+        </scripts>
+
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+				a.brand-logo.black{ display: none !important;}
+            ]]>
+        </styles>
+    </configuration>
+</extentreports>

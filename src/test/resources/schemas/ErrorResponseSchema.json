@@ -1,0 +1,87 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "timestamp",
+    "status",
+    "error",
+    "exception",
+    "message",
+    "trace",
+    "path"
+  ],
+  "properties": {
+    "timestamp": {
+      "$id": "#/properties/timestamp",
+      "type": "string",
+      "title": "The Timestamp Schema",
+      "default": "",
+      "examples": [
+        "2020-02-10T09:48:14.744+0100"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "status": {
+      "$id": "#/properties/status",
+      "type": "integer",
+      "title": "The Status Schema",
+      "default": 0,
+      "examples": [
+        405
+      ]
+    },
+    "error": {
+      "$id": "#/properties/error",
+      "type": "string",
+      "title": "The Error Schema",
+      "default": "",
+      "examples": [
+        "Method Not Allowed"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "exception": {
+      "$id": "#/properties/exception",
+      "type": "string",
+      "title": "The Exception Schema",
+      "default": "",
+      "examples": [
+        "org.springframework.web.HttpRequestMethodNotSupportedException"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "message": {
+      "$id": "#/properties/message",
+      "type": "string",
+      "title": "The Message Schema",
+      "default": "",
+      "examples": [
+        "Request method 'POST' not supported"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "trace": {
+      "$id": "#/properties/trace",
+      "type": "string",
+      "title": "The Trace Schema",
+      "default": "",
+      "examples": [
+        "org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported\n\tat org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:207)\n\tat org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:374)\n\tat org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:314)\n\tat org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:61)\n\tat org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:352)\n\tat org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1131)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:936)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:707)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:790)\n\tat org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:845)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1712)\n\tat org.eclipse.jetty.websocket.server.WebSocketUpgradeFilter.doFilter(WebSocketUpgradeFilter.java:247)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat wkda.common.spring.jetty.ClosedConnectionResponseFilter.doFilterInternal(ClosedConnectionResponseFilter.java:28)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat wkda.common.filter.UniqueRequestIdFilter.doFilterInternal(UniqueRequestIdFilter.java:43)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat wkda.common.filter.ServiceDependenciesHeadersFilter.doFilterInternal(ServiceDependenciesHeadersFilter.java:38)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat wkda.common.security.filter.SecurityFilter.lambda$doFilterInternal$0(SecurityFilter.java:77)\n\tat wkda.common.authorization.AuthorizedContextExecutor.callAndRemove(AuthorizedContextExecutor.java:27)\n\tat wkda.common.authorization.AuthorizedContextExecutor.call(AuthorizedContextExecutor.java:17)\n\tat wkda.common.security.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:75)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat org.springframework.cloud.sleuth.instrument.web.TraceFilter.doFilter(TraceFilter.java:141)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)\n\tat org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1699)\n\tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:582)\n\tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)\n\tat org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)\n\tat org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)\n\tat org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)\n\tat org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:512)\n\tat org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)\n\tat org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)\n\tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\n\tat org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:169)\n\tat org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:119)\n\tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)\n\tat org.eclipse.jetty.server.Server.handle(Server.java:534)\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)\n\tat org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)\n\tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)\n\tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)\n\tat org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)\n\tat org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)\n\tat org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)\n\tat org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)\n\tat org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)\n\tat java.base/java.lang.Thread.run(Thread.java:844)\n"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "path": {
+      "$id": "#/properties/path",
+      "type": "string",
+      "title": "The Path Schema",
+      "default": "",
+      "examples": [
+        "/v1/car-types/manufacturer"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}
